@@ -1,0 +1,47 @@
+name: Build slides
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "main/**"
+      - "images/**"
+      - ".github/workflows/build-slides.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-full latexmk python3-pygments
+
+      - name: Build PDF
+        working-directory: main
+        run: latexmk -pdf -interaction=nonstopmode -shell-escape main.tex
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: slides-pdf
+          path: main/main.pdf
+
+      - name: Publish latest-slides release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: latest-slides
+          name: Latest slides
+          body: "Auto-published PDF of the slides, built from ${{ github.sha }}."
+          artifacts: main/main.pdf
+          allowUpdates: true
+          replacesArtifacts: true
+          makeLatest: false
+          token: ${{ secrets.GITHUB_TOKEN }}
