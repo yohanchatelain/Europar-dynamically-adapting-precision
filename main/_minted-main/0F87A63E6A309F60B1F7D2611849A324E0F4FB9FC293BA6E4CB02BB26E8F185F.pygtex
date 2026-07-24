@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{k+kt}{float} \PYG{n}{a} \PYG{o}{=} \PYG{l+m+mf}{9.633812E6} \PYG{p}{;}
+  \PYG{k+kt}{float} \PYG{n}{b} \PYG{o}{=} \PYG{l+m+mf}{9.633792E6}  \PYG{p}{;}
+  \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}0.7f}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{a} \PYG{o}{\PYGZhy{}} \PYG{n}{b}\PYG{p}{);}
+\end{Verbatim}

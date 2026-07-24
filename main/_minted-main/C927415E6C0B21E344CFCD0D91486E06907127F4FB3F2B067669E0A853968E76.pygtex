@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{define} \PYG{k+kt}{void} \PYG{n+nv+vg}{@twoSum}
+\PYG{p}{(}\PYG{k+kt}{float} \PYG{n+nv}{\PYGZpc{}a}\PYG{p}{,} \PYG{k+kt}{float} \PYG{n+nv}{\PYGZpc{}b}\PYG{p}{,} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}x\PYGZus{}ptr}\PYG{p}{,} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}e\PYGZus{}ptr}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}5} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}a}         \PYG{c}{;}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}6} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}b}         \PYG{c}{;}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}7} \PYG{p}{=} \PYG{k}{fadd} \PYG{k+kt}{float} \PYG{n+nv+nvAnonymous}{\PYGZpc{}5}\PYG{p}{,} \PYG{n+nv+nvAnonymous}{\PYGZpc{}6}      \PYG{c}{;     a+b}
+  \PYG{k}{store} \PYG{k+kt}{float} \PYG{n+nv+nvAnonymous}{\PYGZpc{}7}\PYG{p}{,} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}x}   \PYG{c}{; x = a+b}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}8} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}x}         \PYG{c}{;}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}9} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}a}         \PYG{c}{;}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}10} \PYG{p}{=} \PYG{k}{fsub} \PYG{k+kt}{float} \PYG{n+nv+nvAnonymous}{\PYGZpc{}8}\PYG{p}{,} \PYG{n+nv+nvAnonymous}{\PYGZpc{}9}     \PYG{c}{;     x\PYGZhy{}a}
+  \PYG{k}{store} \PYG{k+kt}{float} \PYG{n+nv+nvAnonymous}{\PYGZpc{}10}\PYG{p}{,} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}z}  \PYG{c}{; z = x\PYGZhy{}a}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}11} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}a}        \PYG{c}{;}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}12} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}x}        \PYG{c}{;}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}13} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}z}        \PYG{c}{;}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}14} \PYG{p}{=} \PYG{k}{fsub} \PYG{k+kt}{float} \PYG{n+nv+nvAnonymous}{\PYGZpc{}12}\PYG{p}{,} \PYG{n+nv+nvAnonymous}{\PYGZpc{}13}   \PYG{c}{;     x\PYGZhy{}z}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}15} \PYG{p}{=} \PYG{k}{fsub} \PYG{k+kt}{float} \PYG{n+nv+nvAnonymous}{\PYGZpc{}11}\PYG{p}{,} \PYG{n+nv+nvAnonymous}{\PYGZpc{}14}   \PYG{c}{;     a\PYGZhy{}(x\PYGZhy{}z)}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}16} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}b}        \PYG{c}{;}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}17} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}z}        \PYG{c}{;}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}18} \PYG{p}{=} \PYG{k}{fsub} \PYG{k+kt}{float} \PYG{n+nv+nvAnonymous}{\PYGZpc{}16}\PYG{p}{,} \PYG{n+nv+nvAnonymous}{\PYGZpc{}17}   \PYG{c}{;     b\PYGZhy{}z}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}19} \PYG{p}{=} \PYG{k}{fadd} \PYG{k+kt}{float} \PYG{n+nv+nvAnonymous}{\PYGZpc{}15}\PYG{p}{,} \PYG{n+nv+nvAnonymous}{\PYGZpc{}18}   \PYG{c}{;     a\PYGZhy{}(x\PYGZhy{}z)+(b\PYGZhy{}z)}
+  \PYG{k}{store} \PYG{k+kt}{float} \PYG{n+nv+nvAnonymous}{\PYGZpc{}19}\PYG{p}{,} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}e}  \PYG{c}{; e = a\PYGZhy{}(x\PYGZhy{}z)+(b\PYGZhy{}z)}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}20} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}x}        \PYG{c}{;}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}21} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{**} \PYG{n+nv+nvAnonymous}{\PYGZpc{}3}       \PYG{c}{;}
+  \PYG{k}{store} \PYG{k+kt}{float} \PYG{n+nv+nvAnonymous}{\PYGZpc{}20}\PYG{p}{,} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv+nvAnonymous}{\PYGZpc{}21} \PYG{c}{; *x\PYGZus{}ptr = x}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}22} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv}{\PYGZpc{}e}        \PYG{c}{;}
+  \PYG{n+nv+nvAnonymous}{\PYGZpc{}23} \PYG{p}{=} \PYG{k}{load} \PYG{k+kt}{float}\PYG{p}{**} \PYG{n+nv+nvAnonymous}{\PYGZpc{}4}\PYG{p}{,}      \PYG{c}{;}
+  \PYG{k}{store} \PYG{k+kt}{float} \PYG{n+nv+nvAnonymous}{\PYGZpc{}22}\PYG{p}{,} \PYG{k+kt}{float}\PYG{p}{*} \PYG{n+nv+nvAnonymous}{\PYGZpc{}23} \PYG{c}{; *e\PYGZus{}ptr = e}
+  \PYG{k}{ret} \PYG{k+kt}{void}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
